@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Get in Touch">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+    <link rel="stylesheet" href="Login.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 3.25.0, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+
+
+    <script type="application/ld+json">        {
+                "@context": "http://schema.org",
+                "@type": "Organization",
+                "name": "Site1"
+        }</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Login">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+</head>
+<body class="u-body">
+    <header class="u-clearfix u-custom-color-7 u-header u-header" id="sec-3620">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <h1 class="u-headline u-text u-title u-text-1">
+                <a href="/">Get in Touch</a>
+            </h1>
+            <img class="u-image u-image-default u-preserve-proportions u-image-1" src="images/logo.png" alt="" data-image-width="105" data-image-height="105">
+        </div>
+    </header>
+    <section class="u-align-center u-clearfix u-section-1" id="sec-312a">
+        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+            <div class="u-layout">
+                <div class="u-layout-row">
+                    <div class="u-align-center u-container-style u-grey-10 u-layout-cell u-size-30 u-layout-cell-1">
+                        <div class="u-container-layout u-valign-bottom-sm u-valign-middle-xs u-container-layout-1">
+                            <img src="images/sin-foto.png" id="foto" class="u-icon u-icon-circle u-spacing-20 u-text-custom-color-7  u-icon-1" />
+                            <h3 class="u-text u-text-default u-text-1">Log in</h3>
+
+                            <div class="u-expanded-width-xs u-form u-login-control u-form-1">
+                                <div class="u-form-group u-form-name">
+                                    <input onkeyup="Cargar_Usuario(event)" type="text" placeholder="Enter your Usern Id" id="username-5b0a" name="username" class="u-border-2 u-border-white u-input u-input-rectangle u-radius-43 u-white" required="">
+                                </div>
+                                <hr />
+                                <div class="u-form-group u-form-password">
+                                    <input disabled type="text" placeholder="Enter your Password" id="password-5b0a" name="password" class="u-border-2 u-border-white u-input u-input-rectangle u-radius-43 u-white" required="">
+                                </div>
+                                <hr />
+                                <div class="u-align-left u-form-group u-form-submit">
+
+                                    <input disabled type="button" value="Log In" class="btn btn-success" id="btn_guardar" />
+
+                                </div>
+
+                                <input hidden disabled type="text" placeholder="Enter your Password" id="idoculto" name="password" class="u-border-2 u-border-white u-input u-input-rectangle u-radius-43 u-white" required="">
+                                <input hidden disabled type="text" placeholder="Enter your Password" id="contraseñaoculta" name="password" class="u-border-2 u-border-white u-input u-input-rectangle u-radius-43 u-white" required="">
+
+                            </div>
+                            <a href="Singup.html" class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-btn u-button-style u-login-control u-login-create-account u-none u-text-palette-1-base u-btn-2">Registrarse</a>
+                        </div>
+                    </div>
+                    <div class="u-container-style u-image u-layout-cell u-size-30 u-image-1" data-image-width="150" data-image-height="97">
+                        <div class="u-container-layout u-container-layout-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-5b04">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <p class="u-small-text u-text u-text-variant u-text-1">Proyecto graduacion Maria Jose</p>
+        </div>
+    </footer>
+    <input hidden id="idoculto">
+    <input hidden id="result">
+    <input hidden id="inputx">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../Ajax.js"></script>
+    <script>
+        function Cargar_Usuario(event) {
+            if (event.which == 13 || event.KeyCode == 13) {
+                if (document.getElementById("username-5b0a").value != "") {
+                    var id_usuario = document.getElementById("username-5b0a").value;
+                    usuario.id_usuario = id_usuario;
+                    Verifica_Usuario(usuario, "proceso=false")
+                }
+            }
+        }
+
+        function Habilitar_Formulario() {
+            document.getElementById("password-5b0a").disabled = false;
+        }
+
+        function Cargar_Formulario(objeto) {
+            console.log(objeto);
+            document.getElementById("btn_guardar").disabled = false;
+            document.getElementById("idoculto").value = objeto.Id_usuario1;
+            document.getElementById("contraseñaoculta").value = objeto.Constraseña1;
+            document.getElementById("foto").src = objeto.Foto1;
+            document.getElementById("inputx").value = objeto.Rol1;
+            Verifica_evaluacion(document.getElementById("idoculto").value);
+        }
+
+        function Redireccionar(id) {
+            var condicion = document.getElementById("result").value;
+            var rol = document.getElementById("inputx").value;
+            console.log(condicion)
+            console.log(rol)
+            if (condicion != "" || rol=="Profesor") {
+
+                location.href = "https://localhost:44327/sitio/Blog.html?id=" + id
+
+            } else (
+                location.href = "https://localhost:44327/sitio/Evaluacion.html?id=" + id
+
+            );
+
+
+
+        }
+
+        function Log_Usuario() {
+            var usuario1 = document.getElementById("username-5b0a").value;
+            var usuario2 = document.getElementById("idoculto").value;
+            var contraseña1 = document.getElementById("password-5b0a").value
+            var contraseña2 = document.getElementById("contraseñaoculta").value
+
+            if ((usuario1 == usuario2) && (contraseña1 == contraseña2)) {
+                alert("Tiene acceso");
+                setTimeout(Redireccionar(usuario1), 10000);
+            } else {
+                alert("No tiene acceso");
+            }
+        }
+        $(document).ready(function () {
+            document.getElementById("btn_guardar").addEventListener("click", Log_Usuario);
+        });
+
+    </script>
+
+
+</body>
+</html>
